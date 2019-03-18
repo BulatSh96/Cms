@@ -1,0 +1,437 @@
+@charset "UTF-8";
+/* Интегрируем переменные с цветами */
+/* Обозначаем цвет фона всего сайта */
+@font-face {
+  font-family: 'fontello';
+  src: url("../fonts/fontello.eot?35721842");
+  src: url("../fonts/fontello.eot?35721842#iefix") format("embedded-opentype"), url("../fonts/fontello.woff2?35721842") format("woff2"), url("../fonts/fontello.woff?35721842") format("woff"), url("../fonts/fontello.ttf?35721842") format("truetype"), url("../fonts/fontello.svg?35721842#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?35721842#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-menu:before {
+  content: '\f0c9';
+}
+
+/* '' */
+html {
+  font-size: 10px;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #eef3f5;
+  color: #131313;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 40px;
+  font-size: 14px;
+}
+
+a {
+  color: a active-color;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+.bttn {
+  padding: 20px 30px;
+  display: inline-block;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  border-bottom: 4px solid;
+}
+
+.bttn-primary {
+  background-color: #009adf;
+  border-bottom: 5px solid #0077ac;
+}
+
+.bttn-primary:hover {
+  background-color: #00acf9;
+  color: #fff;
+  text-decoration: none;
+}
+
+.top-nav {
+  background-color: #fff;
+  padding: 15px;
+  position: relative;
+}
+
+.top-nav_btn {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  position: absolute;
+  right: 15px;
+  top: -50px;
+}
+
+.top-nav_btn:hover {
+  cursor: pointer;
+}
+
+.top-nav_menu {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.top-nav_menu li {
+  margin-right: 45px;
+}
+
+.top-nav_menu li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #131313;
+  font-weight: 700;
+}
+
+.top-nav_menu li a::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #009adf;
+  -webkit-transform: translateY(39px) scale(0);
+          transform: translateY(39px) scale(0);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.top-nav_menu li a:hover::after {
+  -webkit-transform: translateY(39px) scale(1);
+          transform: translateY(39px) scale(1);
+}
+
+.left-sidebar {
+  margin-top: 4rem;
+}
+
+.left-sidebar_btn {
+  display: none;
+  background-color: #fff;
+  padding: 15px;
+  position: relative;
+}
+
+.left-sidebar_btn:hover {
+  cursor: pointer;
+}
+
+.left-sidebar_btn::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 45%;
+  margin-top: -10px;
+  right: 20px;
+  width: 15px;
+  height: 15px;
+  border-bottom: 2px solid #131313;
+  border-right: 2px solid #131313;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.left-sidebar_menu {
+  background-color: #fff;
+  list-style: none;
+  padding: 0;
+}
+
+.left-sidebar li {
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.left-sidebar li:first-child a {
+  padding-top: 20px;
+}
+
+.left-sidebar li:last-child a {
+  padding-bottom: 20px;
+}
+
+.left-sidebar li:hover {
+  background-color: #009adf;
+}
+
+.left-sidebar li:hover a {
+  color: #fff;
+}
+
+.left-sidebar li a {
+  display: block;
+  padding: 15px 29px;
+  text-decoration: none;
+  color: #131313;
+  font-size: 16px;
+  font-weight: 400px;
+}
+
+.left-sidebar_object {
+  margin-top: 30px;
+  background-color: #fff;
+}
+
+.left-sidebar_object-description {
+  padding: 30px;
+}
+
+.left-sidebar_object-description h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.content {
+  margin-top: 40px;
+  margin-bottom: 76px;
+}
+
+.directions {
+  margin-top: 80px;
+}
+
+.directions-block {
+  background-color: #fff;
+  height: 220px;
+  text-align: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 10px;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+
+.directions-block h3 {
+  color: #009adf;
+  font-size: 14px;
+}
+
+.footer {
+  margin-top: 60px;
+  background-color: #131313;
+  padding: 59px 0;
+  color: #666666;
+}
+
+.footer p {
+  margin-bottom: 14px;
+}
+
+.footer a {
+  color: #666666;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer-plocy-link {
+  font-size: 12px;
+}
+
+.footer small {
+  display: block;
+  margin-top: 56px;
+  line-height: 16px;
+  max-width: 80%;
+}
+
+.footer ul {
+  padding: 0;
+  list-style: none;
+}
+
+.footer ul li {
+  line-height: 32px;
+}
+
+.footer-contacts, .footer-social-links {
+  text-align: right;
+}
+
+.footer-contacts_phone {
+  font-weight: 400;
+  font-size: 20px;
+  color: #009adf;
+}
+
+.footer-social-links li {
+  display: inline-block;
+}
+
+.footer-social-links li a {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+/* Адаптив для сайта */
+@media (max-width: 767px) {
+  html {
+    font-size: 7px;
+  }
+  .top-nav_btn {
+    display: block;
+  }
+  .top-nav_menu {
+    margin-top: 12px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: none;
+  }
+  .top-nav_menu li {
+    line-height: 2;
+  }
+  .top-nav_menu li a::after {
+    display: none;
+  }
+  .top-nav_menu__active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 0;
+  }
+  .left-sidebar_object {
+    display: none;
+  }
+  .left-sidebar_btn {
+    display: block;
+  }
+  .left-sidebar_menu {
+    display: none;
+  }
+  .left-sidebar_menu__active {
+    display: block;
+  }
+  .copy {
+    text-align: center;
+  }
+  .copy small {
+    display: block;
+    margin: 36px auto;
+  }
+  .footer-contacts, .footer-social-links {
+    text-align: left;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  html {
+    font-size: 5px;
+  }
+  .top-nav_btn {
+    display: block;
+    margin-top: 80%;
+  }
+  .top-nav_menu {
+    display: none;
+  }
+  .top-nav_menu__active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 0;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    font-size: 12px;
+  }
+  .top-nav_menu li {
+    margin-right: 35px;
+    line-height: 2;
+  }
+  .top-nav_menu li a::after {
+    display: none;
+  }
+  .left-sidebar_object {
+    display: none;
+  }
+  .left-sidebar_btn {
+    display: block;
+  }
+  .left-sidebar_menu {
+    display: none;
+  }
+  .left-sidebar_menu__active {
+    display: block;
+  }
+}
+
+/* Часть Teachers */
+.teachers {
+  text-align: center;
+}
+
+.teachers h4 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+#headZag {
+  margin-bottom: 20px;
+}
+/*# sourceMappingURL=main.css.map */
